@@ -32,12 +32,12 @@ export default function Header() {
           <p className='text-[20px] flex place-items-center font-light'>Sistemas</p>
         </div>
         {cartOpen? "" : productAdd ? (
-          <button className='bg-white text-green-500 flex px-4 py-3 gap-4 rounded-lg w-[90px] max-h-[45x] cursor-pointer active:bg-slate-100'>
+          <button className='bg-white text-green-500 flex px-4 py-3 gap-4 w-[80px] rounded-lg max-h-[45x] cursor-pointer active:bg-slate-100'>
           <img  src='/icons/cart.svg' alt='cart icon' />
           {cartList.length}
         </button>
         ) : (
-          <button onClick={handleClick} className='bg-white flex px-4 py-3 gap-4 rounded-lg  max-h-[45x] cursor-pointer active:bg-slate-100 transition-all duration-500'>
+          <button onClick={handleClick} className='bg-white flex px-4 py-3 gap-4 rounded-lg w-[80px] max-h-[45x] cursor-pointer active:bg-slate-100 transition-all duration-500'>
             <img src='/icons/cart.svg' alt='cart icon' />
             {cartList.length}
           </button>

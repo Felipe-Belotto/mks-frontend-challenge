@@ -35,7 +35,7 @@ export default function Card(props: ProductInfo): JSX.Element {
       <p className='text-xs text-primary font-normal'>{description}</p>
       </div>
 
-      <button onClick={() => handleClick(id)} className='w-full flex bg-[#1252b6] justify-center items-center gap-3 text-sm font-semibold text-white py-[8px] rounded-b-lg active:scla'><img src='/icons/shopping-bag.svg' alt='shopping bag icon'/>Comprar</button>
+      <button onClick={() => handleClick(id)} className='w-full flex bg-[#1252b6] justify-center items-center gap-3 text-sm font-semibold text-white py-[8px] rounded-b-lg  active:scale-[99%] active:bg-[#1251b6e8]'><img src='/icons/shopping-bag.svg' alt='shopping bag icon'/>Comprar</button>
     </div>
   );
 }
