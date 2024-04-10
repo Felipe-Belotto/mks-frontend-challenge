@@ -14,7 +14,7 @@ export default function Home() {
   return (
     <>
     <Header/>
-    <main className="w-full flex justify-center items-center"><Products/> {cartOpen ? <Sidebar/> : ""}</main>
+    <main className="w-full flex justify-center items-center pt-[80px] lg:pt-0"><Products/> {cartOpen ? <Sidebar/> : ""}</main>
     <Footer/>
     </>
   );

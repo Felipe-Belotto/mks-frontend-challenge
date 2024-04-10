@@ -25,7 +25,7 @@ export default function Header() {
   }
 
   return (
-    <header className='w-full bg-[#1252b6] h-[100px] flex justify-center  items-center p-2  md:px-6 lg:px-16 lg:py-0'>
+    <header className='fixed w-full bg-[#1252b6]  flex justify-center  items-center p-2  md:px-6 lg:static lg:h-[100px] lg:px-16 lg:py-0'>
       <div className='w-full flex items-center justify-between 2xl:w-[1440px]'>
         <div className='flex gap-2 text-white'>
           <h1 className='text-[40px] font-semibold'>MKS</h1>

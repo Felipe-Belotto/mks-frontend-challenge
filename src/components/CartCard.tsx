@@ -68,7 +68,7 @@ export default function CartCard(props: CartCardProps) {
   }
 
   return (
-   <div className='h-[90px] '>   
+   <div className='h-[80px] '>   
     <button onClick={() => deleteProduct()} className="w-6 h-6 rounded-full bg-black text-white text-xs flex justify-center items-center leading-none relative 
     left-[97%] lg:left-[420px] top-4 ">X</button>
     <div className='flex justify-between items-center w-full h-100px bg-white rounded-lg p-5 ' >
