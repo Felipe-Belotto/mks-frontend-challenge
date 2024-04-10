@@ -49,7 +49,7 @@ export default function Sidebar() {
   
 
   return (
-    <section className="fixed top-0 right-0 z-10 w-full h-auto lg:w-[500px] bg-[#1252b6] shadow-md transition-transform duration-300 transform translate-x-0 flex flex-col justify-between lg:h-screen">
+    <section className="fixed top-0 right-0 z-10 w-full h-auto min-h-full overflow-auto lg:w-[500px] bg-[#1252b6] shadow-md transition-transform duration-300 transform translate-x-0 flex flex-col justify-between lg:h-screen">
       <div>
         <div className="flex justify-between p-4 lg:p-8">
           <h1 className="text-[28px] font-bold text-white w-[180px] leading-8">Carrinho de compras</h1>
@@ -57,7 +57,7 @@ export default function Sidebar() {
         </div>
         
 
-        <div className="flex flex-col lg:gap-1 px-4 h-full overflow-y-auto lg:px-8 lg:h-[650px] ">
+        <div className="flex flex-col h-[80%] lg:gap-1 px-4 overflow-y-auto lg:px-8 ">
           {selectedProducts.map((item) => (
             <CartCard
               name={item.name}
