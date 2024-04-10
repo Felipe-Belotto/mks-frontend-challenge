@@ -1,4 +1,5 @@
 import { CartContext } from '@/context/CartContext';
+import formatPrice from '@/functions/formatPrice';
 import React, { useContext } from 'react';
 
 interface ProductInfo {
@@ -14,15 +15,6 @@ export default function Card(props: ProductInfo): JSX.Element {
   const {addToCart} = useContext(CartContext);
 
   const { id, name, description, price, image } = props;
-
-  function formatPrice(price: number) {
-    return new Intl.NumberFormat('pt-BR', {
-      style: 'currency',
-      currency: 'BRL',
-      minimumFractionDigits: 0,
-      maximumFractionDigits: 0,
-    }).format(price); 
-  }
 
   function handleClick(id: number){
     addToCart({id});

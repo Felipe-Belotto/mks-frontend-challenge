@@ -1,21 +1,29 @@
 "use client";
-import React, { createContext, useState } from 'react';
+import React, { createContext, useEffect, useState } from 'react';
 
 interface Product {
   id: number;
 }
 
-export const CartContext = createContext<{ cartList: Product[]; addToCart: (product: Product) => void }>({
+export const CartContext = createContext<{ cartList: Product[];  addToCart: (product: Product) => void; removeToCart: (product: Product) => void;  cartOpen: boolean, OpenCart: () => void, CloseCart: () => void }>({
   cartList: [],
   addToCart: () => {},
+  removeToCart: () => {},
+  cartOpen: false,
+  OpenCart: () => {},
+  CloseCart: () => {},
 });
 
-export const CartProvider = <T extends React.ReactNode>({ children }: { children: T }) => { // Define children type as React.ReactNode
+export const CartProvider = <T extends React.ReactNode>({ children }: { children: T }) => { 
   const [cartList, setCartList] = useState<Product[]>([]);
   const [cartOpen, setCartOpen] = useState(false);
 
   const addToCart = (id: Product) => {
     setCartList([...cartList, id]);
+  };
+
+  const removeToCart = (id: Product) => {
+    setCartList(cartList.filter((product) => product.id !== id.id));
   };
 
   function OpenCart () {
@@ -26,8 +34,9 @@ export const CartProvider = <T extends React.ReactNode>({ children }: { children
     setCartOpen(false);
   }
 
+
   return (
-    <CartContext.Provider value={{cartList, addToCart, cartOpen, OpenCart, CloseCart}}>
+    <CartContext.Provider value={{cartList, addToCart,removeToCart, cartOpen, OpenCart, CloseCart}}>
       {children}
     </CartContext.Provider>
   );
