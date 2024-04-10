@@ -18,9 +18,15 @@ export const CartProvider = <T extends React.ReactNode>({ children }: { children
   const [cartList, setCartList] = useState<Product[]>([]);
   const [cartOpen, setCartOpen] = useState(false);
 
-  const addToCart = (id: Product) => {
-    setCartList([...cartList, id]);
+  const addToCart = (product: Product) => {
+   
+    const isAlreadyInCart = cartList.some((item) => item.id === product.id);
+  
+    if (!isAlreadyInCart) {
+      setCartList([...cartList, product]); 
+    }
   };
+  
 
   const removeToCart = (id: Product) => {
     setCartList(cartList.filter((product) => product.id !== id.id));
