@@ -55,6 +55,7 @@ export default function Sidebar() {
           <h1 className="text-[28px] font-bold text-white w-[180px] leading-8">Carrinho de compras</h1>
           <button onClick={CloseCart} className="w-10 h-10 rounded-full bg-black text-white text-xl flex justify-center items-center leading-none">X</button>
         </div>
+        
 
         <div className="flex flex-col gap-4 px-8 h-[650px] overflow-y-auto">
           {selectedProducts.map((item) => (

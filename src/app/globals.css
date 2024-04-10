@@ -21,3 +21,21 @@ body {
   flex-direction: column;
   justify-content: space-between;
 }
+
+::-webkit-scrollbar {
+  width: 6px; 
+}
+
+::-webkit-scrollbar-track {
+  background: #001e4a3d; 
+}
+
+::-webkit-scrollbar-thumb {
+  background: #c9c9c9; 
+  border-radius: 10px;
+}
+
+
+::-webkit-scrollbar-thumb:hover {
+  background: #ffffff;
+}
