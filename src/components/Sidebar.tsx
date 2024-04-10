@@ -49,15 +49,15 @@ export default function Sidebar() {
   
 
   return (
-    <section className="fixed top-0 right-0 z-10 h-screen w-[500px] bg-[#1252b6] shadow-md transition-transform duration-300 transform translate-x-0 flex flex-col justify-between">
+    <section className="fixed top-0 right-0 z-10 h-screen w-full lg:w-[500px] bg-[#1252b6] shadow-md transition-transform duration-300 transform translate-x-0 flex flex-col justify-between">
       <div>
-        <div className="flex justify-between p-8">
+        <div className="flex justify-between p-4 lg:p-8">
           <h1 className="text-[28px] font-bold text-white w-[180px] leading-8">Carrinho de compras</h1>
           <button onClick={CloseCart} className="w-10 h-10 rounded-full bg-black text-white text-xl flex justify-center items-center leading-none">X</button>
         </div>
         
 
-        <div className="flex flex-col gap-4 px-8 h-[650px] overflow-y-auto">
+        <div className="flex flex-col lg:gap-1 px-4 h-full overflow-y-auto lg:px-8 lg:h-[650px] ">
           {selectedProducts.map((item) => (
             <CartCard
               name={item.name}
@@ -72,10 +72,10 @@ export default function Sidebar() {
       </div>
 
       <div className='flex flex-col justify-between'>
-        <div className='flex justify-between px-8 py-6 font-bold text-white text-[28px]'>
+        <div className='flex justify-between text-white font-bold px-4 py-3 lg:px-8 lg:py-6 lg:text-[28px]'>
         <p>Total:</p><p>{formatPrice(total)}</p>
         </div>
-      <button className='bg-black text-white w-full h-[100px] text-[28px] font-bold'>Finalizar Compra</button>
+      <button className='bg-black text-white w-full h-[80px] lg:h-[100px] text-[28px] font-bold'>Finalizar Compra</button>
       </div>
     </section>
   );

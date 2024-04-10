@@ -25,8 +25,8 @@ export default function Header() {
   }
 
   return (
-    <header className='w-full bg-[#1252b6] h-[100px] px-16 flex justify-center'>
-      <div className='w-[1440px] flex items-center justify-between'>
+    <header className='w-full bg-[#1252b6] h-[100px] flex justify-center  items-center p-2  md:px-6 lg:px-16 lg:py-0'>
+      <div className='w-full flex items-center justify-between 2xl:w-[1440px]'>
         <div className='flex gap-2 text-white'>
           <h1 className='text-[40px] font-semibold'>MKS</h1>
           <p className='text-[20px] flex place-items-center font-light'>Sistemas</p>
@@ -37,7 +37,7 @@ export default function Header() {
           {cartList.length}
         </button>
         ) : (
-          <button onClick={handleClick} className='bg-white flex px-4 py-3 gap-4 rounded-lg w-[90px] max-h-[45x] cursor-pointer active:bg-slate-100 transition-all duration-500'>
+          <button onClick={handleClick} className='bg-white flex px-4 py-3 gap-4 rounded-lg  max-h-[45x] cursor-pointer active:bg-slate-100 transition-all duration-500'>
             <img src='/icons/cart.svg' alt='cart icon' />
             {cartList.length}
           </button>

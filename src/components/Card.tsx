@@ -22,13 +22,13 @@ export default function Card(props: ProductInfo): JSX.Element {
   
 
   return (
-    <div className="flex flex-col w-[230px] min-h-[285px] shadow-3xl rounded-lg justify-between items-center" id={`${id}`}>
+    <div className="flex flex-col w-[230px] min-h-[285px] shadow-3xl rounded-lg justify-between items-center  lg:my-0 "  id={`${id}`}>
 
-      <img className=' w-[150px] h-[150px] justify-center' src={image} alt={name} />
-
-      <div className='flex flex-col p-[14px] gap-2 h-[160px]'>
+      <img className=' w-[150px] h-[150px] justify-center lg:h-100px' src={image} alt={name} />
+      <div className='flex flex-col p-[14px] gap-2 h-[160px] '>
         <div className='flex justify-between items-start min-h-8 gap-0'>
-        <h2 className='text-base text-primary font-semibold'>{name}</h2>
+
+        <h2 className='text-base text-primary font-semibold '>{name}</h2>
         <span className=' y-[26px] bg-[#373737] text-white font-bold px-2 py-1 text-xs rounded'>{formatPrice(price)}</span>
         </div>
       

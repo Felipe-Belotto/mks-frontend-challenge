@@ -30,7 +30,7 @@ export default function Products() {
   
 
   return (
-    <div className='flex gap-5 w-[1000px] flex-wrap'>
+    <div className='flex gap-5 flex-wrap justify-center my-[20px]  md:w-full md:justify-evenly md:mx-[20px] lg:w-[800px]   xl:w-[1000px]  2xl:my-0 ' >
     {produtos.length > 0 ? (
       produtos.map((item) => (
         <Card
