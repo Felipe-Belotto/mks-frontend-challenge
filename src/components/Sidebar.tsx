@@ -49,7 +49,7 @@ export default function Sidebar() {
   
 
   return (
-    <section className="fixed top-0 right-0 z-10 h-screen w-full lg:w-[500px] bg-[#1252b6] shadow-md transition-transform duration-300 transform translate-x-0 flex flex-col justify-between">
+    <section className="fixed top-0 right-0 z-10 w-full h-auto lg:w-[500px] bg-[#1252b6] shadow-md transition-transform duration-300 transform translate-x-0 flex flex-col justify-between lg:h-screen">
       <div>
         <div className="flex justify-between p-4 lg:p-8">
           <h1 className="text-[28px] font-bold text-white w-[180px] leading-8">Carrinho de compras</h1>
