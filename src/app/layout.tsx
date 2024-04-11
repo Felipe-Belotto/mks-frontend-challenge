@@ -2,6 +2,7 @@
 import "./globals.css";
 import { Montserrat } from 'next/font/google'
 import type { Metadata } from 'next'
+import { CartProvider } from "@/context/CartContext";
  
 export const metadata: Metadata = {
   title: 'MKS Sistemas',
@@ -18,7 +19,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt-br">
+      <CartProvider>
       <body className={montserrat.className}>{children}</body>
+      </CartProvider>
     </html>
   );
 }

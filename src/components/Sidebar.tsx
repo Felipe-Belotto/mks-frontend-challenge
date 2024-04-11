@@ -47,7 +47,6 @@ export default function Sidebar() {
     }
   }
   
-
   return (
     <section className="fixed top-0 right-0 z-10 w-full h-full min-h-screen lg:w-[500px] bg-[#1252b6] shadow-md transition-transform duration-300 transform translate-x-0 flex flex-col justify-between  overflow-y-auto 2xl:h-screen 2xl:overflow-hidden">
       <div className='flex flex-col '>

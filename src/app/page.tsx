@@ -12,10 +12,10 @@ export default function Home() {
   const {cartOpen} = useContext(CartContext);
 
   return (
-    <CartProvider>
+    <>
     <Header/>
     <main className="w-full flex justify-center items-center pt-[80px] lg:pt-0"><Products/> {cartOpen ? <Sidebar/> : ""}</main>
     <Footer/>
-    </CartProvider>
+    </>
   );
 }
