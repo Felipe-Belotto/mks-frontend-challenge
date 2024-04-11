@@ -4,7 +4,7 @@ import { Montserrat } from 'next/font/google'
 import type { Metadata } from 'next'
  
 export const metadata: Metadata = {
-  title: 'MKS sistemas',
+  title: 'MKS Sistemas',
   description: 'Desafio Frontend da MKS sistemas',
   keywords:"Desafio Frontend JR, MKS sistemas, Front End Junior,",
 }
