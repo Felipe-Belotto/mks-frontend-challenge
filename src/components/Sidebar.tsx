@@ -56,7 +56,7 @@ export default function Sidebar() {
           <button onClick={CloseCart} className="w-10 h-10 rounded-full bg-black text-white text-xl flex justify-center items-center leading-none">X</button>
         </div>
         
-        <div className="flex flex-col items-center gap-2 lg:gap-1 px-4  h-auto  lg:px-8 ">
+        <div className="flex flex-col items-center gap-0 lg:gap-1 px-4  h-auto  lg:px-8 ">
           {selectedProducts.map((item) => (
             <CartCard
               name={item.name}
@@ -71,7 +71,7 @@ export default function Sidebar() {
       </div>
 
       <div className='flex flex-col justify-between'>
-        <div className='flex justify-between text-white font-bold px-4 py-3 mt-8 lg:px-8 lg:py-4 lg:text-[28px] 2xl:mt-0'>
+        <div className='flex justify-between text-white font-bold px-4 py-3 mt-8 lg:px-8 lg:py-4 text-[28px] 2xl:mt-0'>
         <p>Total:</p><p>{formatPrice(total)}</p>
         </div>
       <button className='bg-black text-white w-full h-[80px] lg:h-[80px] text-[28px] font-bold'>Finalizar Compra</button>
