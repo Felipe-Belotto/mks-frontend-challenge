@@ -68,14 +68,18 @@ export default function CartCard(props: CartCardProps) {
   }
 
   return (
-   <div className='h-[80px] '>   
-    <button onClick={() => deleteProduct()} className="w-6 h-6 rounded-full bg-black text-white text-xs flex justify-center items-center leading-none relative 
-    left-[97%] lg:left-[420px] top-4 ">X</button>
-    <div className='flex justify-between items-center w-full h-100px bg-white rounded-lg p-5 ' >
-      <img className='max-w-[40px]' src={props.image} alt="imagem do produto" />
-      <p className='text-sm texto-primary font-normal w-[120px]'>{props.name}</p>
+   <div className='w-[80%] lg:h-[80px] lg:w-full '>   
+    <button onClick={() => deleteProduct()} className="w-6 h-6 rounded-full text-[42px] lg:text-xs lg:bg-black lg:text-white flex justify-center items-center leading-none relative 
+    left-[86%] top-10 lg:left-[420px] lg:top-4 ">X</button>
+    <div className='flex flex-col lg:flex-row  gap-2 items-center w-full h-100px bg-white rounded-lg p-5 ' >
+     <div className='flex flex-col lg:flex-row gap-3 justify-center items-center w-[80%] lg:w-[50%] lg:justify-between'>
+      <img className='w-[70%] lg:max-w-[40px]' src={props.image} alt="imagem do produto" />
+      <p className=' text-base texto-primary font-normal lg:text-sm lg:w-[140px]'>{props.name}</p>
+      </div>
+      <div className='w-[90%] flex items-center justify-between lg:w-[50%] lg:justify-between'>
       <InputQuantity value={quantity} onAdd={addQuantity} onRemove={removeQuantity}/>
-      <p className='text-sm text-black font-bold'>{formatPrice(props.price)}</p>
+      <p className='text-white px-2 py-1 rounded bg-[#373737] text-base lg:text-black lg:bg-transparent font-bold'>{formatPrice(props.price)}</p>
+      </div>
     </div>
 
     </div>

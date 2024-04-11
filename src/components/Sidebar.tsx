@@ -56,7 +56,7 @@ export default function Sidebar() {
           <button onClick={CloseCart} className="w-10 h-10 rounded-full bg-black text-white text-xl flex justify-center items-center leading-none">X</button>
         </div>
         
-        <div className="flex flex-col gap-2 lg:gap-1 px-4  h-auto  lg:px-8 ">
+        <div className="flex flex-col items-center gap-2 lg:gap-1 px-4  h-auto  lg:px-8 ">
           {selectedProducts.map((item) => (
             <CartCard
               name={item.name}
