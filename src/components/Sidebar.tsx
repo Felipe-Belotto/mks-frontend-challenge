@@ -1,8 +1,9 @@
 import { CartContext } from '@/context/CartContext';
-import React, { Fragment, useContext, useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import CartCard from './CartCard';
 import apiProducts from '@/functions/apiProducts';
 import formatPrice from '@/functions/formatPrice';
+import { motion } from "framer-motion"
 
 interface CartItem {
   name: string;
@@ -48,7 +49,12 @@ export default function Sidebar() {
   }
   
   return (
-    <section className="fixed top-0 right-0 z-10 w-full h-full min-h-screen lg:w-[500px] bg-[#1252b6] shadow-md transition-transform duration-300 transform translate-x-0 flex flex-col justify-between  overflow-y-auto 2xl:h-screen 2xl:overflow-hidden">
+    <motion.section
+  className="fixed top-0 right-0 z-10 w-full h-full min-h-screen lg:w-[500px] bg-[#1252b6] shadow-md transition-transform duration-75 translate-x-0 flex flex-col justify-between overflow-y-auto 2xl:h-screen 2xl:overflow-hidden"
+  initial={{ x: "100%",  }}
+  animate={cartOpen ? { x: 0 } : { x: "100%"}}
+  exit={{ x: "100%" }}
+>
       <div className='flex flex-col '>
         <div className="flex justify-between p-4 lg:px-8 lg:pt-6 lg:pb-2">
           <h1 className="text-[28px] font-bold text-white w-[180px] leading-8">Carrinho de compras</h1>
@@ -75,6 +81,6 @@ export default function Sidebar() {
         </div>
       <button className='bg-black text-white w-full h-[80px] lg:h-[80px] text-[28px] font-bold'>Finalizar Compra</button>
       </div>
-    </section>
+    </motion.section>
   );
 }

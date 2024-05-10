@@ -9,13 +9,11 @@ import { useContext } from "react";
 
 export default function Home() {
 
-  const {cartOpen} = useContext(CartContext);
-
   return (
     <>
     <Header/>
-    <main className="w-full flex justify-center items-center pt-[80px] lg:pt-0 flex-1"><Products/> {cartOpen ? <Sidebar/> : ""}</main>
+    <main className="w-full flex justify-center items-center pt-[80px] lg:pt-0 flex-1"><Products/>  <Sidebar/></main>
     <Footer/>
     </>
   );
-}
+} 
