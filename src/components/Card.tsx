@@ -1,6 +1,7 @@
 import { CartContext } from '@/context/CartContext';
 import formatPrice from '@/functions/formatPrice';
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
+import {motion} from 'framer-motion';
 
 interface ProductInfo {
   id: number;
@@ -13,10 +14,14 @@ interface ProductInfo {
 export default function Card(props: ProductInfo): JSX.Element {
 
   const {addToCart} = useContext(CartContext);
+  const [animateBag, setAnimateBag] = useState(false);
 
   const { id, name, description, price, image } = props;
 
   function handleClick(id: number){
+    setTimeout(() => {
+      setAnimateBag(true);
+    }, 200);
     addToCart({id});
   }
   
@@ -35,7 +40,8 @@ export default function Card(props: ProductInfo): JSX.Element {
       <p className='text-xs text-primary font-normal'>{description}</p>
       </div>
 
-      <button onClick={() => handleClick(id)} className='w-full flex bg-[#1252b6] justify-center items-center gap-3 text-sm font-semibold text-white py-[8px] rounded-b-lg  active:scale-[99%] active:bg-[#1251b6e8]'><img src='/icons/shopping-bag.svg' alt='shopping bag icon'/>Comprar</button>
+      <button onClick={() => handleClick(id)} className='w-full flex bg-[#1252b6] justify-center items-center gap-3 text-sm font-semibold text-white py-[8px] rounded-b-lg  active:scale-[99%] active:bg-[#1251b6e8]'>
+        <motion.img animate={animateBag? {rotate: 360} : {}} transition={{duration: 0.5}} src='/icons/shopping-bag.svg' alt='shopping bag icon'/>Comprar</button>
     </div>
   );
 }

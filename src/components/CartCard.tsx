@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from 'react'
 import InputQuantity from './InputQuantity'
 import { CartContext } from '@/context/CartContext'
 import apiProducts from '@/functions/apiProducts'
+import {motion} from "framer-motion"
 
 interface CartCardProps {
   name: string
@@ -64,13 +65,16 @@ export default function CartCard(props: CartCardProps) {
 
   function deleteProduct(){
     props.priceChange(props.id, realPrice)
-    removeToCart({id: props.id})
+    
+    setTimeout(() => {
+      removeToCart({id: props.id})
+    }, 300)
   }
 
   return (
-   <div className='w-[90%] lg:h-[80px] lg:w-full '>   
-    <button onClick={() => deleteProduct()} className="w-6 h-6 rounded-full text-[42px] lg:text-xs lg:bg-black lg:text-white flex justify-center items-center leading-none relative 
-    left-[86%] top-10 lg:left-[420px] lg:top-4 ">X</button>
+   <motion.div initial={{opacity: 0}} animate={{opacity: 1}} className='w-[90%] lg:h-[80px] lg:w-full duration-1000'>   
+    <motion.button whileTap={{translateY: -5}} onClick={() => deleteProduct()} className="w-6 h-6 rounded-full text-[42px] lg:text-xs lg:bg-black lg:text-white flex justify-center items-center leading-none relative 
+    left-[86%] top-10 lg:left-[420px] lg:top-4 ">X</motion.button>
     <div className='flex flex-col lg:flex-row  gap-2 items-center w-full h-100px bg-white rounded-lg p-5 ' >
      <div className='flex flex-col lg:flex-row gap-3 justify-center items-center w-[80%] lg:w-[50%] lg:justify-between'>
       <img className='w-[70%] lg:max-w-[40px]' src={props.image} alt="imagem do produto" />
@@ -82,7 +86,7 @@ export default function CartCard(props: CartCardProps) {
       </div>
     </div>
 
-    </div>
+    </motion.div>
 
     
   )
